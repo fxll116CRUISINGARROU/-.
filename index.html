@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>교통동호인 fx 소개</title>
+    <title>교통동호인 FXII116 소개</title>
     <!-- Tailwind CSS 탑재 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 폰트 및 아이콘 설정 -->
@@ -30,7 +30,7 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 min-height-screen text-slate-100 flex justify-center items-start py-10 px-4 sm:px-6 lg:px-8">
+<body class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 min-h-screen text-slate-100 flex justify-center items-start py-10 px-4 sm:px-6 lg:px-8">
 
 <div class="w-full max-w-5xl bg-slate-900/80 backdrop-blur-md rounded-3xl p-6 sm:p-10 shadow-2xl border border-white/10">
     
@@ -52,6 +52,7 @@
         </div>
     </div>
 
+    <!-- 취미 및 음식 정보 -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         <!-- 취미 카드 -->
         <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-cyan-500/10 to-blue-600/10 border border-cyan-500/20 p-6 flex items-start gap-4 hover:border-cyan-400/40 transition-all duration-300">
@@ -75,6 +76,7 @@
         </div>
     </div>
 
+    <!-- 필터 & 가이드 설명 -->
     <div class="mb-8">
         <div class="flex items-center justify-between flex-wrap gap-4 mb-4">
             <h2 class="text-2xl font-black text-slate-100 flex items-center gap-2">
@@ -92,6 +94,7 @@
         </div>
     </div>
 
+    <!-- 상세 수집 카드 목록 -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="favoritesGrid">
 
         <!-- 1. 버스 차종 -->
@@ -124,7 +127,7 @@
             <p class="text-sm text-slate-400 mt-1">차세대 SRT (181000호대)</p>
         </div>
 
-        <!-- 4. 철도 노선 (기존 id: station에서 rail-route로 매핑 교정) -->
+        <!-- 4. 철도 노선 -->
         <div class="favorite-card group cursor-pointer bg-slate-800/40 hover:bg-slate-800/90 border border-slate-700/50 hover:border-teal-500/50 rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-teal-500/10" data-id="rail-route" data-category="rail">
             <div class="flex justify-between items-start mb-2">
                 <span class="text-xs font-bold text-teal-400 bg-teal-400/10 px-2.5 py-1 rounded-md">RAIL LINE</span>
@@ -134,7 +137,7 @@
             <p class="text-sm text-slate-400 mt-1">구 중앙선</p>
         </div>
 
-        <!-- 5. 철도역 (기존 id: airport에서 rail-station으로 매핑 교정) -->
+        <!-- 5. 철도역 -->
         <div class="favorite-card group cursor-pointer bg-slate-800/40 hover:bg-slate-800/90 border border-slate-700/50 hover:border-teal-500/50 rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-teal-500/10" data-id="rail-station" data-category="rail">
             <div class="flex justify-between items-start mb-2">
                 <span class="text-xs font-bold text-teal-400 bg-teal-400/10 px-2.5 py-1 rounded-md">STATION</span>
@@ -144,7 +147,7 @@
             <p class="text-sm text-slate-400 mt-1">구 중앙선 화본역</p>
         </div>
 
-        <!-- 6. 공항 (기존 id: airline에서 airport로 매핑 교정) -->
+        <!-- 6. 공항 -->
         <div class="favorite-card group cursor-pointer bg-slate-800/40 hover:bg-slate-800/90 border border-slate-700/50 hover:border-purple-500/50 rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10" data-id="airport" data-category="air">
             <div class="flex justify-between items-start mb-2">
                 <span class="text-xs font-bold text-purple-400 bg-purple-400/10 px-2.5 py-1 rounded-md">AIRPORT</span>
@@ -154,7 +157,7 @@
             <p class="text-sm text-slate-400 mt-1">울릉공항</p>
         </div>
 
-        <!-- 7. 항공사 (기존 id: aircraft에서 airline으로 매핑 교정) -->
+        <!-- 7. 항공사 -->
         <div class="favorite-card group cursor-pointer bg-slate-800/40 hover:bg-slate-800/90 border border-slate-700/50 hover:border-purple-500/50 rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10" data-id="airline" data-category="air">
             <div class="flex justify-between items-start mb-2">
                 <span class="text-xs font-bold text-purple-400 bg-purple-400/10 px-2.5 py-1 rounded-md">AIRLINE</span>
@@ -164,7 +167,7 @@
             <p class="text-sm text-slate-400 mt-1">한성항공</p>
         </div>
 
-        <!-- 8. 항공기 (기존 id: air-route에서 aircraft로 매핑 교정) -->
+        <!-- 8. 항공기 -->
         <div class="favorite-card group cursor-pointer bg-slate-800/40 hover:bg-slate-800/90 border border-slate-700/50 hover:border-purple-500/50 rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10" data-id="aircraft" data-category="air">
             <div class="flex justify-between items-start mb-2">
                 <span class="text-xs font-bold text-purple-400 bg-purple-400/10 px-2.5 py-1 rounded-md">AIRCRAFT</span>
@@ -174,7 +177,7 @@
             <p class="text-sm text-slate-400 mt-1">아시아나항공 HL7528</p>
         </div>
 
-        <!-- 9. 항공 노선 (기존 id: car에서 air-route로 매핑 교정) -->
+        <!-- 9. 항공 노선 -->
         <div class="favorite-card group cursor-pointer bg-slate-800/40 hover:bg-slate-800/90 border border-slate-700/50 hover:border-purple-500/50 rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10" data-id="air-route" data-category="air">
             <div class="flex justify-between items-start mb-2">
                 <span class="text-xs font-bold text-purple-400 bg-purple-400/10 px-2.5 py-1 rounded-md">AIR ROUTE</span>
@@ -184,7 +187,7 @@
             <p class="text-sm text-slate-400 mt-1">시드니 ~ 런던 직항</p>
         </div>
 
-        <!-- 10. 자동차 (기존 id: ship에서 car로 매핑 교정) -->
+        <!-- 10. 자동차 -->
         <div class="favorite-card group cursor-pointer bg-slate-800/40 hover:bg-slate-800/90 border border-slate-700/50 hover:border-amber-500/50 rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-500/10" data-id="car" data-category="etc">
             <div class="flex justify-between items-start mb-2">
                 <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-md">CAR</span>
@@ -194,7 +197,7 @@
             <p class="text-sm text-slate-400 mt-1">쌍용 코란도 (2세대)</p>
         </div>
 
-        <!-- 11. 선박 (기존 id: port에서 ship으로 매핑 교정) -->
+        <!-- 11. 선박 -->
         <div class="favorite-card group cursor-pointer bg-slate-800/40 hover:bg-slate-800/90 border border-slate-700/50 hover:border-amber-500/50 rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-500/10" data-id="ship" data-category="etc">
             <div class="flex justify-between items-start mb-2">
                 <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-md">VESSEL</span>
@@ -204,7 +207,7 @@
             <p class="text-sm text-slate-400 mt-1">비욘드 트러스트호</p>
         </div>
 
-        <!-- 12. 항구 (data-id="port" 명시하여 데이터 매핑 완벽 완료) -->
+        <!-- 12. 항구 (클릭 이벤트 정상 작동을 위한 data-id="port" 바인딩 완료) -->
         <div class="favorite-card group cursor-pointer bg-slate-800/40 hover:bg-slate-800/90 border border-slate-700/50 hover:border-amber-500/50 rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-500/10" data-id="port" data-category="etc">
             <div class="flex justify-between items-start mb-2">
                 <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-md">PORT</span>
@@ -224,8 +227,9 @@
 
 </div>
 
+<!-- 상세 정보 안내 모달창 (반응형 최적화) -->
 <div id="infoModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
-    <div class="bg-slate-900 border border-slate-800 w-full max-w-3xl rounded-2xl shadow-2xl max-h-[90vh] flex flex-col transform scale-95 transition-transform duration-300 overflow-hidden">
+    <div id="modalContent" class="bg-slate-900 border border-slate-800 w-full max-w-3xl rounded-2xl shadow-2xl max-h-[90vh] flex flex-col transform scale-95 transition-transform duration-300 overflow-hidden">
         
         <!-- 모달 헤더 -->
         <div class="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-950/40">
@@ -233,12 +237,13 @@
                 <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
                 <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">상세 수집 정보</span>
             </div>
+            <!-- 우측 상단 닫기 (X) 버튼 -->
             <button class="close-btn text-slate-400 hover:text-slate-100 text-2xl transition-colors p-1" aria-label="닫기">
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
         
-        <!-- 모달 바디 (스크롤 가능) -->
+        <!-- 모달 바디 (세부 아카이브 스크롤 공간) -->
         <div class="p-6 overflow-y-auto space-y-6">
             <h2 id="modalTitle" class="text-2xl sm:text-3xl font-extrabold text-slate-100 tracking-tight"></h2>
             
@@ -253,7 +258,7 @@
             </div>
         </div>
         
-        <!-- 모달 푸터 -->
+        <!-- 모달 푸터 (하단 닫기 확인 버튼) -->
         <div class="px-6 py-3 border-t border-slate-800/60 bg-slate-950/20 flex justify-end">
             <button class="close-btn px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-semibold rounded-lg transition-colors">
                 확인
@@ -263,7 +268,7 @@
 </div>
 
 <script>
-// 데이터 구조를 정교하게 정리하여 각 카드 데이터-아이디와 완벽히 매핑 완료
+// 데이터 구조 매핑 완벽 복원 및 오류 복구 완료
 const data = {
     "bus-model": {
         title: "FXII116 크루징 애로우",
@@ -273,7 +278,7 @@ const data = {
     "bus-route": {
         title: "9403번 버스",
         main: "동성교통에서 운행했던 광역버스 노선으로, 왕복 운행 거리는 56.8km다.",
-        sub: "서울 광역버스 중 분당신도시로 갈 때 유일하게 성남 본시가지를 경유했다. 복정역 1번출구 정류장에서 수정구가 아닌 송파구 위례신도시를 잠깐 지나갔다. 참고로 9408번은 수정구와 중원구를 경유하지만 원도심이 아닌 서울공항, 고등동, 여수동만 거치고, 다른 버스는 분당신도시와 판교신도시만 경유한다. 9401번, 9404번, 9408번과 함께 구미동 일대에서의 정류소 간격이 매우 촘촘했다. 특히 대우.롯데아파트/신원아파트 - 미금초등학교 구간이 가장 촘촘한데, 약 120m 간격이다. 형간 전환 이후로는 미금역 경유로 변경되면서 구미동을 지나지 않고 그 부분을 성남 버스 351이 매꿔주게 되었다. 9408번처럼 고속(화)도로를 경유하지 않고 노선상의 거의 모든 정류소에 정차하므로, 소요시간이 꽤 길었다. 그래서 출퇴근 시간에도 좌석을 노릴 수 있을 정도로 이용객이 많지 않았다. 2권역 및 3권역을 경유하는 마지막 광역버스 노선이었다. 현대 에어로 스페이스 LS, 현대 유니버스, 대우 BH116, FX116으로 운행했다. 첫차가 03:20이었을 때에는 오리역에서 동대문역사문화공원역까지 불과 1시간 20분대에 주파했다. 게다가 첫차 수요가 많아서, 03:20에 구미동에서는 첫차 3대가 연달아서 나갔다. 그렇게 나간 3대는 서로서로 추월해가며 밤새도록 버스를 기다리던 사람들이나 새벽에 출근객들을 실어 날랐다. 또는 앞차가 미친 듯이 밟고 다른 두 대가 다소 서행하면서 승객을 쓸어담기도 했다. 서울특별시 시내버스는 같은 노선 간의 추월을 허용하지 않음에도 위에 적은 행위가 가능했던 것은 03:00~04:00가 서울시 BMS의 정기점검 시간대였기 때문이다. 버스정보 앱에도 이 시간대에는 운행하는 버스가 보이지 않았다가 2015년 신형 티머니 단말기가 장착된 뒤에야 보이게 됐다. 그래서 신형 티머니 단말기 장착 전까지는 9403번의 저 추월 장면을 보려면 직접 막차나 첫차를 타야 했다. 거기다 새벽에 동대문을 나선 막차는 야탑역 ~ 이매촌한신아파트(서현역 동편) 사이에서 첫차와 만났다. 즉, 막차가 구미동에 도착하여 운행을 마치기 전에 첫차 운행이 시작된 것이다. 2017년 5월 6일 자로 첫/막차시각이 조정되자, 많은 버스 동호인들은 이러다 수요가 확 주는 것 아니냐며 탁상행정이라고 비난했으며 예상대로 이 문서를 보듯이 수요가 무려 20%나 증발했다. 다만, 이를 무작정 탁상행정이라고 비난만 하기도 곤란하다. 개정된 여객자동차 운수사업법으로 인해, 운전자 휴게시간을 보장하기 위한 조치가 반드시 필요했기 때문이다. 기점 기준 21시간 40분(03:20 ~ 익일 22:00)에 달하는 넓은 운영시간대를 유지하면서는 개정된 법을 준수할 수 없어서 내려진 조치라는 것이다. 법을 지키면서도 심야운행을 감축하지 않으려면, 예산 투자액 자체를 늘려 운전인력을 대폭으로 추가고용하든지, 이 노선의 운영 형태를 완전히 갈아엎어야 하는데 둘 중 어느 방향이든 지자체/운수업체 측이 손쉽게 결단할 수 있는 일이 아니다. 그러므로 첫차를 더 늦출 수 없다면 이 노선의 막차가 다시 더 늦춰질 가능성은 희박하다. 다만 평상시 수요는 매우 저조한데다 평시에는 대체 노선이 많으니, 첫/막차시각을 각각 늦은 오후와 익일 오전시간대로 설정하고 공백시간은 낮에 두는 식으로 운영 형태를 갈아엎어서라도 심야 운행을 남겨두는 것이 시민의 대중교통 이용 편익에 있어 더 바람직했을 것이라는 견해도 존재한다. 첫/막차시각의 조정 후에도 동대문 기준 막차시각은 01:40~50이었기에 나름대로 심야버스 역할을 어느 정도는 계속해 주고 있었다. 게다가 9403번을 탈 수 없게 된 시간대에도 2018년 10월말까지는 각 방향별 막차시각이 9403번보다 늦었던 1005-1번(구미동 기준 00:40/서울역버스환승센터 기준 02:00)이 부분적으로 대체재 역할을 했었고, 그 후 2019년 7월 1일자로 성남형 심야버스인 반디1번/반디2번이 운행을 개시하면서 서울과 성남을 오갈 때 평일에나마 9403번의 첫/막차시각 조정 전보다도 버스 이용시간 범위가 더 넓어지게 됐다. 이 2개의 반디버스 노선들은 비록 정차 정류소 수는 9403번과 (구)1005-1번보다 더 적지만 평시 버스노선들과 전철의 운행이 시작될 때까지 계속 운행하기 때문에, 평일에는 대중교통을 이용한 서울-성남 심야 이동에 있어 시간대 제약이 완전히 사라진 셈이다."
+        sub: "서울 광역버스 중 분당신도시로 갈 때 유일하게 성남 본시가지를 경유했다. 복정역 1번출구 정류장에서 수정구가 아닌 송파구 위례신도시를 잠깐 지나갔다. 참고로 9408번은 수정구와 중원구를 경유하지만 원도심이 아닌 서울공항, 고등동, 여수동만 거치고, 다른 버스는 분당신도시와 판교신도시만 경유한다. 9401번, 9404번, 9408번과 함께 구미동 일대에서의 정류소 간격이 매우 촘촘했다. 특히 대우.롯데아파트/신원아파트 - 미금초등학교 구간이 가장 촘촘한데, 약 120m 간격이다. 형간 전환 이후로는 미금역 경유로 변경되면서 구미동을 지나지 않고 그 부분을 성남 버스 351이 매꿔주게 되었다. 9408번처럼 고속(화)도로를 경유하지 않고 노선상의 거의 모든 정류소에 정차하므로, 소요시간이 꽤 길었다. 그래서 출퇴근 시간에도 좌석을 노릴 수 있을 정도로 이용객이 많지 않았다. 2권역 및 3권역을 경유하는 마지막 광역버스 노선이었다. 현대 에어로 스페이스 LS, 현대 유니버스, 대우 BH116, FX116으로 운행했다. 첫차가 03:20이었을 때에는 오리역에서 동대문역사문화공원역까지 불과 1시간 20분대에 주파했다. 게다가 첫차 수요가 많아서, 03:20에 구미동에서는 첫차 3대가 연달아서 나갔다. 그렇게 나간 3대는 서로서로 추월해가며 밤새도록 버스를 기다리던 사람들이나 새벽에 출근객들을 실어 날랐다. 또는 앞차가 미친 듯이 밟고 다른 두 대가 다소 서행하면서 승객을 쓸어담기도 했다. 서울특별시 시내버스는 같은 노선 간의 추월을 허용하지 않음에도 위에 적은 행위가 가능했던 것은 03:00~04:00가 서울시 BMS의 정기점검 시간대였기 때문이다. 버스정보 앱에도 이 시간대에는 운행하는 버스가 보이지 않았다가 2015년 신형 티머니 단말기가 장착된 뒤에야 보이게 됐다. 그래서 신형 티머니 단말기 장착 전까지는 9403번의 저 추월 장면을 보려면 직접 막차나 첫차를 타야 했다. 거기다 새벽에 동대문을 나선 막차는 야탑역 ~ 이매촌한신아파트(서현역 동편) 사이에서 첫차와 만났다. 즉, 막차가 구미동에 도착하여 운행을 마치기 전에 첫차 운행이 시작된 것이다. 2017년 5월 6일 자로 첫/막차시각이 조정되자, 많은 버스 동호인들은 이러다 수요가 확 주는 것 아니냐며 탁상행정이라고 비난했으며 예상대로 이 문서를 보듯이 수요가 무려 20%나 증발했다. 다만, 이를 무작정 탁상행정이라고 비난만 하기도 곤란하다. 개정된 여객자동차 운수사업법으로 인해, 운전자 휴게시간을 보장하기 위한 조치가 반드시 필요했기 때문이다. 기점 기준 21시간 40분(03:20 ~ 익일 22:00)에 달하는 넓은 운영시간대를 유지하면서는 개정된 법을 준수할 수 없어서 내려진 조치라는 것이다. 법을 지키면서도 심야운행을 감축하지 않으려면, 예산 투자액 자체를 늘려 운전인력을 대폭으로 추가고용하든지, 이 노선의 운영 형태를 완전히 갈아엎어야 하는데 둘 중 어느 방향이든 지자체/운수업체 측이 손쉽게 결단할 수 있는 일이 아니다. 그러므로 첫차를 더 늦출 수 없다면 이 노선의 막차가 다시 더 늦춰질 가능성은 희박하다. 다만 평상시 수요는 매우 저조한데다 평시에는 대체 노선이 많으니, 첫/막차시각을 각각 늦은 오후 and 익일 오전시간대로 설정하고 공백시간은 낮에 두는 식으로 운영 형태를 갈아엎어서라도 심야 운행을 남겨두는 것이 시민의 대중교통 이용 편익에 있어 더 바람직했을 것이라는 견해도 존재한다. 첫/막차시각의 조정 후에도 동대문 기준 막차시각은 01:40~50이었기에 나름대로 심야버스 역할을 어느 정도는 계속해 주고 있었다. 게다가 9403번을 탈 수 없게 된 시간대에도 2018년 10월말까지는 각 방향별 막차시각이 9403번보다 늦었던 1005-1번(구미동 기준 00:40/서울역버스환승센터 기준 02:00)이 부분적으로 대체재 역할을 했었고, 그 후 2019년 7월 1일자로 성남형 심야버스인 반디1번/반디2번이 운행을 개시하면서 서울과 성남을 오갈 때 평일에나마 9403번의 첫/막차시각 조정 전보다도 버스 이용시간 범위가 더 넓어지게 됐다. 이 2개의 반디버스 노선들은 비록 정차 정류소 수는 9403번과 (구)1005-1번보다 더 적지만 평시 버스노선들과 전철의 운행이 시작될 때까지 계속 운행하기 때문에, 평일에는 대중교통을 이용한 서울-성남 심야 이동에 있어 시간대 제약이 완전히 사라진 셈이다."
     },
     "train-model": {
         title: "차세대 SRT (181000호대)",
@@ -282,7 +287,7 @@ const data = {
     },
     "rail-route": {
         title: "구 중앙선",
-        main: "제천역-풍기역 구간에 직류 3,000V로 전철화하여 데로형 전기기관차를 투입할 계획으로 1942년부터 전철화 공사가 실시되었지만, 일제의 패망으로 한번 중단되었다가, 1946년 재개. 6.25 전쟁 발발로 중단되고 투입대기 중이던 데로형 전기기관차는 모두 북한으로 끌려가 백지화되었다. 6.25 전쟁 이후 1960년 후반에 화물소요 폭증에 따른 선로용량 한계를 대처하기 위해 일부 구간에 복선전철화 얘기[76]가 나왔으며 청량리역 - 덕소역, 구둔역 - 양동역, 제천역 - 도담역 세 구간이 실제로 계획까지 수립되어 구둔역 - 양동역 구간은 착공까지 되었으나 예산 문제로 중지되고 신장을 여러 군데 설치하는 선에서 그치게 되었다. 지금도 구둔역과 매곡역 사이의 구 선로에는 복선 부지와 미 착공 폐터널이 상당수 남아 있다.",
+        main: "제천역-풍기역 구간에 직류 3,000V로 전철화하여 데로형 전기기관차를 투입할 계획으로 1942년부터 전철화 공사가 실시되었지만, 일제의 패망으로 한번 중단되었다가, 1946년 재개. 6.25 전쟁 발발로 중단되고 투입대기 중이던 데로형 전기기관차는 모두 북한으로 끌려가 백지화되었다. 6.25 전쟁 이후 1960년 후반에 화물소요 폭증에 따른 선로용량 한계를 대처하기 위해 일부 구간에 복선전철화 얘기가 나왔으며 청량리역 - 덕소역, 구둔역 - 양동역, 제천역 - 도담역 세 구간이 실제로 계획까지 수립되어 구둔역 - 양동역 구간은 착공까지 되었으나 예산 문제로 중지되고 신장을 여러 군데 설치하는 선에서 그치게 되었다. 지금도 구둔역과 매곡역 사이의 구 선로에는 복선 부지와 미 착공 폐터널이 상당수 남아 있다.",
         sub: "그러다가 원활한 화물 운송을 위해 1973년 6월에 청량리역 - 제천역 구간을 교류 25,000V 60㎐로 전철화했고 영동선, 태백선도 잇달아 전철화가 되어 위 세 노선에서는 전기기관차 두 대가 중련하여 벌크 시멘트를 40~50량씩 끌고 가는 모습을 자주 볼 수 있게 되었다. 이로 인해 중앙선 역들은 다른 곳에 비해 구내 선로가 무지막지하게 긴 모습을 볼 수 있다. 하지만 이것도 임시방편에 불과한 조치였고, 세월이 흐르면서 더 이상 버틸 수가 없어져서 복선화에 다시금 박차를 가하게 됐다. 앞서 서술한 바와 같이 일찍이 복선화가 점쳐지던 세 구간 중 구둔역 - 양동역 구간은 예산 부족으로 도중에 중단됐지만 나머지의 경우, 1978년의 수도권 전철화 계획 및 1989년『철도건설중장기계획』 등으로 다시 이야기가 나오다가 하술된 바와 같이 2010년대에 들어와서 차례차례 완공됐다. 1988년 12월에는 제천역~영주역 구간에 전철화가 되면서 중앙선 개통 초기부터 계획하던 제천 - 풍기 구간이 수십 년 늦게 전철화가 완성됐다. 개량 전 운행자료는 상당수가 남양주시 조안면에서 촬영된 자료로, 조안면이 전원일기 촬영지였기 때문에 가능했다. 그 외 지역의 영상자료는 찾기 힘들거나 없다. 1990년대 후반부터 개량 필요성이 대두됐고, 기존 선로를 복선화, 전철화, 직선화하는 대대적인 사업에 들어가게 된다. 사업 명칭에는 복선전철화만 포함되어 있으나 대부분 굴곡진 선로를 펴는 직선화 사업도 병행된다. 사실상 주요역 몇 개를 제외하고는 새롭게 선로를 까는 개념이다. 이로써 폐역되는 역/신호장은 34개이다. 2026년 기준 열차운행세칙에 따르면 청량리 ~ 망우 110㎞/h, 망우 ~ 덕소 150㎞/h, 덕소 ~ 원주 최고 230㎞/h, 원주 ~ 봉양 250㎞/h, 봉양 ~ 도담 150㎞/h, 도담 ~ 영천 250km/h로 정하고 있다고 했다."
     },
     "rail-station": {
@@ -327,12 +332,14 @@ const data = {
     }
 };
 
+// 요소 변수 정의
 const modal = document.getElementById('infoModal');
-const modalContent = modal.querySelector('.transform');
+const modalContent = document.getElementById('modalContent');
 const modalTitle = document.getElementById('modalTitle');
 const modalMain = document.getElementById('modalMain');
 const modalSub = document.getElementById('modalSub');
 
+// 모달 열기 함수
 function openModal(dataId) {
     const item = data[dataId];
     if (!item) return;
@@ -341,27 +348,31 @@ function openModal(dataId) {
     modalMain.textContent = item.main;
     modalSub.textContent = item.sub;
 
-    // 보이기 애니메이션 적용
+    // 보이기 애니메이션 적용 및 제어값 세팅
     modal.classList.remove('pointer-events-none', 'opacity-0');
     modal.classList.add('opacity-100');
     modalContent.classList.remove('scale-95');
     modalContent.classList.add('scale-100');
-    document.body.style.overflow = 'hidden'; // 부모 스크롤 방지
+    document.body.style.overflow = 'hidden'; // 부모 본문 스크롤 방지
 }
 
+// 모달 닫기 함수
 function closeModal() {
+    // 기존 활성화 클래스(opacity-100)를 반드시 제거해야 opacity-0(투명도 0)이 적용되어 정상 차단됩니다.
+    modal.classList.remove('opacity-100');
     modal.classList.add('opacity-0');
+    
     modalContent.classList.remove('scale-100');
     modalContent.classList.add('scale-95');
     
-    // 이펙트 후 완전 숨김
+    // 트랜지션 애니메이션 완료 후 완전히 비활성화
     setTimeout(() => {
         modal.classList.add('pointer-events-none');
         document.body.style.overflow = '';
     }, 200);
 }
 
-// 이벤트 리스너 바인딩
+// 클릭 핸들러 및 닫기 바인딩
 document.querySelectorAll('.favorite-card').forEach(card => {
     card.addEventListener('click', () => {
         const dataId = card.getAttribute('data-id');
@@ -369,24 +380,32 @@ document.querySelectorAll('.favorite-card').forEach(card => {
     });
 });
 
+// 상단 X 버튼 및 하단 확인 버튼 모두 바인딩
 document.querySelectorAll('.close-btn').forEach(btn => {
-    btn.addEventListener('click', closeModal);
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // 이벤트 버블링 방지
+        closeModal();
+    });
 });
 
+// 모달 외부 배경 영역 클릭 시 닫기
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
         closeModal();
     }
 });
 
+// ESC 버튼 누를 시 닫기
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !modal.classList.contains('pointer-events-none')) {
         closeModal();
     }
 });
 
+// 실시간 카테고리 필터 기능
 function filterCategory(category) {
-    // 버튼 활성화 스타일 제어
+    // 버튼 활성화 스타일 주입
     const buttons = document.querySelectorAll('.filter-btn');
     buttons.forEach(btn => {
         btn.classList.remove('active', 'bg-blue-600', 'text-white');
@@ -402,7 +421,7 @@ function filterCategory(category) {
         activeBtn.classList.add('active', 'bg-blue-600', 'text-white');
     }
 
-    // 카드 필터링 처리
+    // 카드 필터링
     const cards = document.querySelectorAll('.favorite-card');
     cards.forEach(card => {
         const cardCat = card.getAttribute('data-category');
