@@ -1,256 +1,325 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FXII116 소개</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FXII116 소개 & 교통 방명록</title>
+    <!-- Tailwind CSS 및 FontAwesome 아이콘 로드 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"맑은 고딕", sans-serif;
-}
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: 'Inter', "맑은 고딕", sans-serif;
+        }
 
-body{
-    background:linear-gradient(135deg,#1e3c72,#2a5298,#4facfe);
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-    padding:40px 30px;
-    overflow-x:hidden;
-}
+        body{
+            background: linear-gradient(135deg, #1e3c72, #2a5298, #4facfe);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 20px;
+            overflow-x: hidden;
+        }
 
-.container{
-    width:100%;
-    max-width:1200px;
-    background:rgba(255,255,255,0.96);
-    border-radius:25px;
-    padding:40px;
-    box-shadow:0 15px 35px rgba(0,0,0,0.2);
-}
+        .container{
+            width: 100%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+        }
 
-.profile{
-    text-align:center;
-    margin-bottom:40px;
-}
+        .profile{
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-.profile-img{
-    width:180px;
-    height:180px;
-    margin:0 auto 20px;
-    border-radius:50%;
-    overflow:hidden;
-    border:6px solid #4facfe;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
-    background:white;
-}
+        .profile-img{
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 6px solid #4facfe;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            background: white;
+            transition: transform 0.3s ease;
+        }
 
-.profile-img img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    display:block;
-}
+        .profile-img:hover {
+            transform: scale(1.05) rotate(3deg);
+        }
 
-h1{
-    color:#1e3c72;
-    font-size:42px;
-    margin-bottom:15px;
-}
+        .profile-img img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
-.intro{
-    font-size:18px;
-    color:#555;
-    line-height:1.8;
-}
+        h1{
+            color: #1e3c72;
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
 
-.section-title{
-    text-align:center;
-    color:#1e3c72;
-    font-size:32px;
-    margin:40px 0 20px;
-}
+        .intro{
+            font-size: 19px;
+            color: #4a5568;
+            line-height: 1.8;
+            font-weight: 500;
+        }
 
-/* 타임라인 스타일 추가 */
-.timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto 40px;
-    padding: 20px 0;
-}
+        .section-title{
+            text-align: center;
+            color: #1e3c72;
+            font-size: 32px;
+            margin: 50px 0 25px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
 
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 4px;
-    background-color: #4facfe;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -2px;
-}
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            padding: 20px 0;
+        }
 
-.timeline-container {
-    padding: 10px 40px;
-    position: relative;
-    background-color: inherit;
-    width: 50%;
-}
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, #4facfe, #1e3c72);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
 
-.timeline-container::after {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    right: -8px;
-    background-color: white;
-    border: 4px solid #1e3c72;
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-}
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
 
-.left {
-    left: 0;
-}
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            right: -9px;
+            background-color: white;
+            border: 4px solid #1e3c72;
+            top: 18px;
+            border-radius: 50%;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
 
-.right {
-    left: 50%;
-}
+        .timeline-container:hover::after {
+            background-color: #4facfe;
+            transform: scale(1.3);
+        }
 
-.right::after {
-    left: -8px;
-}
+        .left {
+            left: 0;
+        }
 
-.timeline-content {
-    padding: 20px;
-    background-color: white;
-    position: relative;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    border-top: 4px solid #4facfe;
-}
+        .right {
+            left: 50%;
+        }
 
-.timeline-content h3 {
-    color: #1e3c72;
-    margin-bottom: 5px;
-    font-size: 18px;
-}
+        .right::after {
+            left: -9px;
+        }
 
-.timeline-content p {
-    color: #555;
-    font-size: 15px;
-    line-height: 1.5;
-}
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-top: 4px solid #4facfe;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
+        .timeline-content:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
 
-.card{
-    background:linear-gradient(135deg,#4facfe,#00c6ff);
-    color:white;
-    padding:25px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 10px 20px rgba(0,0,0,0.15);
-    transition:0.3s;
-}
+        .timeline-content h3 {
+            color: #1e3c72;
+            margin-bottom: 5px;
+            font-size: 18px;
+            font-weight: 700;
+        }
 
-.card:hover{
-    transform:translateY(-5px);
-}
+        .timeline-content p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.5;
+        }
 
-.card h2{
-    margin-bottom:12px;
-}
+        .cards{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
 
-.favorites{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:18px;
-}
+        .card{
+            background: linear-gradient(135deg, #4facfe, #00c6ff);
+            color: white;
+            padding: 30px 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-.favorite-card{
-    background:white;
-    border-left:6px solid #4facfe;
-    border-radius:15px;
-    padding:18px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
+        .card:hover{
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,198,255,0.3);
+        }
 
-.favorite-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
+        .card h2{
+            margin-bottom: 12px;
+            font-size: 24px;
+            font-weight: 700;
+        }
 
-.favorite-card h3{
-    color:#1e3c72;
-    margin-bottom:8px;
-    font-size:18px;
-}
+        .favorites{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+        }
 
-.favorite-card p{
-    color:#444;
-    line-height:1.5;
-}
+        .favorite-card{
+            background: white;
+            border-left: 6px solid #4facfe;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
 
-footer{
-    margin-top:40px;
-    text-align:center;
-    color:#777;
-    font-size:14px;
-}
+        .favorite-card:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+            border-left-color: #1e3c72;
+        }
 
-@media (max-width:768px){
-    .container{
-        padding:25px;
-    }
+        .favorite-card h3{
+            color: #1e3c72;
+            margin-bottom: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-    h1{
-        font-size:32px;
-    }
+        .favorite-card p{
+            color: #4a5568;
+            line-height: 1.5;
+            font-weight: 500;
+        }
 
-    .section-title{
-        font-size:26px;
-    }
+        footer{
+            margin-top: 50px;
+            text-align: center;
+            color: #718096;
+            font-size: 14px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
+        }
 
-    .profile-img{
-        width:150px;
-        height:150px;
-    }
+        @media (max-width:768px){
+            body {
+                padding: 15px 10px;
+            }
 
-    /* 모바일 환경 타임라인 반응형 조정 */
-    .timeline::after {
-        left: 31px;
-    }
-    .timeline-container {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
-    }
-    .timeline-container::after {
-        left: 23px;
-    }
-    .right {
-        left: 0;
-    }
-}
+            .container{
+                padding: 20px;
+                border-radius: 18px;
+            }
 
-.favorite-card{cursor:pointer;}
-.modal{display:none;position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:9999}
-.modal-content{background:#fff;width:90%;max-width:1000px;max-height:85vh;overflow:auto;margin:4vh auto;padding:30px;border-radius:20px}
-.close-btn{float:right;font-size:36px;cursor:pointer}
-.main-text{font-size:28px;font-weight:bold;line-height:1.6;color:#1e3c72;margin:20px 0}
-.sub-text{font-size:18px;line-height:1.8;white-space:pre-wrap}
+            h1{
+                font-size: 32px;
+            }
 
-</style>
+            .section-title{
+                font-size: 26px;
+                margin: 35px 0 15px;
+            }
+
+            .profile-img{
+                width: 140px;
+                height: 140px;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-container {
+                width: 100%;
+                padding-left: 55px;
+                padding-right: 15px;
+            }
+            .timeline-container::after {
+                left: 22px;
+            }
+            .right {
+                left: 0;
+            }
+        }
+
+        .favorite-card{ cursor: pointer; }
+        .modal{ display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,.6); z-index: 9999; backdrop-filter: blur(5px); }
+        .modal-content{ background: #fff; width: 90%; max-width: 800px; max-height: 85vh; overflow-y: auto; margin: 7vh auto; padding: 35px; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
+        .close-btn{ float: right; font-size: 36px; cursor: pointer; color: #a0aec0; transition: color 0.2s; }
+        .close-btn:hover { color: #2d3748; }
+        .main-text{ font-size: 24px; font-weight: 800; line-height: 1.6; color: #1e3c72; margin: 20px 0; border-bottom: 2px solid #edf2f7; padding-bottom: 15px; }
+        .sub-text{ font-size: 16px; line-height: 1.8; white-space: pre-wrap; color: #4a5568; }
+
+        /* 토스트 팝업 스타일 */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #2d3748;
+            color: #fff;
+            text-align: center;
+            border-radius: 10px;
+            padding: 16px;
+            position: fixed;
+            z-index: 10000;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: visibility 0s, opacity 0.5s linear;
+            opacity: 0;
+        }
+
+        #toast.show {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
 </head>
 
 <body>
@@ -259,17 +328,18 @@ footer{
 
     <div class="profile">
         <div class="profile-img">
-            <img src="1000163435.jpg" alt="프로필 사진">
+            <!-- 이미지 부재시를 위해 에러 캡처 처리 및 대체 이미지 탑재 -->
+            <img src="1000163435.jpg" onerror="this.src='https://placehold.co/180x180/1e3c72/ffffff?text=FXII116'" alt="프로필 사진">
         </div>
 
         <h1>FXII116</h1>
 
         <div class="intro">
+            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2.5 py-0.5 rounded-full font-semibold mb-2">Since 2022</span><br>
             5년차 교통동호인<br>
         </div>
     </div>
 
-    <!-- ⏳ 성장 타임라인 섹션 추가 -->
     <h2 class="section-title">⏳ 교통동호인 성장 연혁</h2>
     <div class="timeline">
         <div class="timeline-container left">
@@ -311,98 +381,443 @@ footer{
     </div>
 
     <h2 class="section-title">🎯 취미 & 좋아하는 음식</h2>
-
     <div class="cards">
         <div class="card">
+            <div class="text-3xl mb-3"><i class="fa-solid fa-map-location-dot"></i></div>
             <h2>취미</h2>
-            <p>교통(버스, 철도, 항공, 선박, 자동차)</p>
+            <p class="text-blue-50 opacity-90">교통(버스, 철도, 항공, 선박, 자동차)</p>
         </div>
 
-        <div class="card">
+        <div class="card" style="background: linear-gradient(135deg, #f12711, #f5af19);">
+            <div class="text-3xl mb-3"><i class="fa-solid fa-utensils"></i></div>
             <h2>좋아하는 음식</h2>
-            <p>돼지갈비, 라면</p>
+            <p class="text-orange-50 opacity-90">돼지갈비, 라면</p>
         </div>
     </div>
 
     <h2 class="section-title">⭐ 가장 좋아하는 것들</h2>
-
     <div class="favorites">
 
         <div class="favorite-card" data-id="bus-model">
-            <h3>🚌 버스 차종</h3>
+            <h3><i class="fa-solid fa-bus text-blue-500"></i> 버스 차종</h3>
             <p>FXII116 크루징 애로우</p>
         </div>
 
         <div class="favorite-card" data-id="bus-route">
-            <h3>🚍 버스 노선</h3>
+            <h3><i class="fa-solid fa-route text-green-500"></i> 버스 노선</h3>
             <p>9403번</p>
         </div>
 
         <div class="favorite-card" data-id="train-model">
-            <h3>🚄 철도 차량</h3>
+            <h3><i class="fa-solid fa-train text-red-500"></i> 철도 차량</h3>
             <p>차세대 SRT (181000호대)</p>
         </div>
 
         <div class="favorite-card" data-id="station">
-            <h3>🛤 철도 노선</h3>
+            <h3><i class="fa-solid fa-road text-amber-600"></i> 철도 노선</h3>
             <p>구 중앙선</p>
         </div>
 
         <div class="favorite-card" data-id="airport">
-            <h3>🚉 철도역</h3>
+            <h3><i class="fa-solid fa-warehouse text-purple-500"></i> 철도역</h3>
             <p>구 중앙선 화본역</p>
         </div>
 
         <div class="favorite-card" data-id="airline">
-            <h3>✈️ 공항</h3>
+            <h3><i class="fa-solid fa-plane-departure text-sky-500"></i> 공항</h3>
             <p>울릉공항</p>
         </div>
 
         <div class="favorite-card" data-id="aircraft">
-            <h3>🛫 항공사</h3>
+            <h3><i class="fa-solid fa-plane-arrival text-indigo-500"></i> 항공사</h3>
             <p>한성항공</p>
         </div>
 
         <div class="favorite-card" data-id="air-route">
-            <h3>🛩 항공기</h3>
+            <h3><i class="fa-solid fa-plane text-teal-500"></i> 항공기</h3>
             <p>아시아나항공 HL7528</p>
         </div>
 
         <div class="favorite-card" data-id="car">
-            <h3>🌏 항공 노선</h3>
+            <h3><i class="fa-solid fa-earth-americas text-emerald-500"></i> 항공 노선</h3>
             <p>시드니 ~ 런던 직항</p>
         </div>
 
         <div class="favorite-card" data-id="ship">
-            <h3>🚗 자동차</h3>
+            <h3><i class="fa-solid fa-car text-gray-700"></i> 자동차</h3>
             <p>쌍용 코란도 (2세대)</p>
         </div>
 
         <div class="favorite-card" data-id="port">
-            <h3>🚢 선박</h3>
+            <h3><i class="fa-solid fa-ship text-blue-600"></i> 선박</h3>
             <p>비욘드 트러스트호</p>
         </div>
 
         <div class="favorite-card" data-id="han-river-bus">
-            <h3>⚓ 항구</h3>
+            <h3><i class="fa-solid fa-anchor text-cyan-600"></i> 항구</h3>
             <p>한강버스 서울숲선착장</p>
         </div>
 
     </div>
 
+    <h2 class="section-title"><i class="fa-solid fa-ticket text-blue-500"></i> 실시간 탑승 방명록</h2>
+    
+    <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 md:p-8 mt-5 max-w-4xl mx-auto shadow-inner">
+        <!-- 방명록 입력 폼 -->
+        <form id="guestbook-form" class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-1">탑승객 이름 <span class="text-red-500">*</span></label>
+                    <input type="text" id="gb-name" required placeholder="이름 또는 닉네임" 
+                           class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition-all">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-1">삭제 비밀번호 <span class="text-red-500">*</span></label>
+                    <input type="password" id="gb-password" required placeholder="비밀번호(숫자 4자리)" maxlength="4" pattern="[0-9]*" inputmode="numeric"
+                           class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition-all">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-1">탑승 교통수단 <span class="text-slate-400">(선택)</span></label>
+                    <select id="gb-icon" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm bg-white transition-all">
+                        <option value="fa-bus text-blue-500">🚌 버스</option>
+                        <option value="fa-train text-red-500">🚄 기차 (지하철)</option>
+                        <option value="fa-plane text-sky-500">✈️ 비행기 (항공)</option>
+                        <option value="fa-ship text-teal-600">🚢 선박 (크루즈)</option>
+                        <option value="fa-car text-gray-700">🚗 자동차 (드라이브)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm font-semibold text-slate-700 mb-1">남기고 싶은 메시지 <span class="text-red-500">*</span></label>
+                <textarea id="gb-message" required rows="3" placeholder="안전하고 즐거운 여정을 위한 응원의 한마디를 남겨주세요!" 
+                          class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm resize-none transition-all"></textarea>
+            </div>
+
+            <div class="flex justify-end pt-2">
+                <button type="submit" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold text-sm px-8 py-3 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+                    <i class="fa-solid fa-paper-plane mr-2"></i> 방명록 등록하기
+                </button>
+            </div>
+        </form>
+
+        <!-- 방명록 리스트 출력 영역 -->
+        <div class="mt-8 border-t border-slate-200 pt-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-slate-800"><i class="fa-solid fa-receipt text-slate-500 mr-2"></i> 실시간 방명록 리스트 (<span id="gb-count">0</span>)</h3>
+                <span class="text-xs text-slate-400">실시간 연동 중</span>
+            </div>
+            
+            <div id="guestbook-list" class="space-y-4 max-h-[500px] overflow-y-auto pr-2">
+                <!-- 방명록 항목이 자바스크립트로 이곳에 실시간 주입됩니다 -->
+                <div class="text-center py-8 text-slate-400 text-sm">
+                    <i class="fa-solid fa-spinner fa-spin text-2xl mb-2 text-slate-300 block"></i>
+                    방명록을 불러오는 중입니다...
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
-        © 2026 Teacher Profile
+        © 2026 Teacher Profile & FXII116 Fanboard. Powered by Cloud Systems.
     </footer>
 
 </div>
 
 
-<div id="infoModal" class="modal"><div class="modal-content">
-<span class="close-btn">&times;</span>
-<h2 id="modalTitle"></h2>
-<div id="modalMain" class="main-text"></div>
-<div id="modalSub" class="sub-text"></div>
-</div></div>
+<!-- 1. 기본 상세 정보 모달 -->
+<div id="infoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <div id="modalMain" class="main-text"></div>
+        <div id="modalSub" class="sub-text"></div>
+    </div>
+</div>
+
+<!-- 2. 신규: 방명록 삭제 확인용 패스워드 모달 -->
+<div id="deleteModal" class="modal">
+    <div class="modal-content max-w-md mt-[15vh]">
+        <span class="close-btn" id="closeDeleteModal">&times;</span>
+        <h2 class="text-xl font-bold text-red-600 mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-trash-can"></i> 방명록 삭제하기
+        </h2>
+        <p class="text-slate-600 text-sm mb-4">작성시 설정했던 비밀번호 숫자 4자리를 입력해주세요.</p>
+        
+        <input type="password" id="deletePasswordInput" placeholder="비밀번호 4자리" maxlength="4"
+               class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none text-center text-lg tracking-widest font-bold mb-4">
+        
+        <div class="flex gap-3">
+            <button id="cancelDeleteBtn" class="flex-1 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-sm transition-all">취소</button>
+            <button id="confirmDeleteBtn" class="flex-1 py-2.5 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl text-sm shadow-md transition-all">삭제 승인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 토스트 알림창 -->
+<div id="toast">알림 메시지</div>
+
+
+<script type="module">
+    // Firebase 필수 모듈 및 Firestore 기능 로드
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { getFirestore, doc, collection, addDoc, onSnapshot, deleteDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+    // 글로벌 환경 변수 지원 설정 (없으면 기본값 적용)
+    const appId = typeof __app_id !== 'undefined' ? __app_id : 'fxii116-profile-app';
+    const rawConfig = typeof __firebase_config !== 'undefined' ? __firebase_config : null;
+    
+    // 로컬 디버깅 및 단독 구동을 위한 더미 파이어베이스 설정 제공
+    const firebaseConfig = rawConfig ? JSON.parse(rawConfig) : {
+        apiKey: "AIzaSyAs-FakeKey1234567890",
+        authDomain: "fxii116-profile-app.firebaseapp.com",
+        projectId: "fxii116-profile-app",
+        storageBucket: "fxii116-profile-app.appspot.com",
+        messagingSenderId: "12345678",
+        appId: "1:12345678:web:abcdef123"
+    };
+
+    // Firebase 초기화
+    let app, db, auth;
+    let isFirebaseReady = false;
+
+    // 로컬 메모리 백업용 상태 (파이어베이스가 에뮬레이터 상태거나 초기화 불가 상태일 때 대안 제공)
+    let localGuestbook = [];
+
+    function showToast(message) {
+        const toast = document.getElementById("toast");
+        toast.textContent = message;
+        toast.className = "show";
+        setTimeout(() => {
+            toast.className = toast.className.replace("show", "");
+        }, 3000);
+    }
+
+    try {
+        app = initializeApp(firebaseConfig);
+        db = getFirestore(app);
+        auth = getAuth(app);
+        isFirebaseReady = true;
+    } catch (e) {
+        console.warn("Firestore 초기화 실패. 로컬 세션 모드로 안전하게 전환합니다.", e);
+        isFirebaseReady = false;
+    }
+
+    async function startAuth() {
+        if (!isFirebaseReady) return;
+        try {
+            if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                await signInWithCustomToken(auth, __initial_auth_token);
+            } else {
+                await signInAnonymously(auth);
+            }
+        } catch (error) {
+            console.error("인증 처리 실패: ", error);
+        }
+    }
+
+    function renderGuestbook(messages) {
+        const listEl = document.getElementById('guestbook-list');
+        const countEl = document.getElementById('gb-count');
+        
+        if (messages.length === 0) {
+            listEl.innerHTML = `
+                <div class="text-center py-10 text-slate-400 text-sm bg-white rounded-2xl border border-slate-100">
+                    <i class="fa-solid fa-map-pin text-3xl mb-2 text-slate-300 block"></i>
+                    아직 첫 승차 기록이 없습니다. 먼저 방명록을 작성해 보세요!
+                </div>
+            `;
+            countEl.textContent = "0";
+            return;
+        }
+
+        countEl.textContent = messages.length;
+        listEl.innerHTML = messages.map(item => {
+            const dateStr = item.createdAt ? new Date(item.createdAt).toLocaleString('ko-KR', {
+                year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute:'2-digit'
+            }) : '방금 전';
+
+            return `
+                <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-3 hover:shadow-md transition-all relative group">
+                    <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-lg shrink-0">
+                        <i class="fa-solid ${item.icon || 'fa-bus text-blue-500'}"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="font-bold text-slate-800 text-sm truncate">${escapeHtml(item.name)}</span>
+                            <span class="text-[10px] text-slate-400">${dateStr}</span>
+                        </div>
+                        <p class="text-slate-600 text-sm whitespace-pre-wrap break-words leading-relaxed">${escapeHtml(item.message)}</p>
+                    </div>
+                    <button onclick="triggerDelete('${item.id}', '${item.password}')" 
+                            class="text-slate-300 hover:text-red-500 p-1.5 rounded-lg hover:bg-red-50 transition-colors shrink-0 self-center" 
+                            title="삭제">
+                        <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                </div>
+            `;
+        }).join('');
+    }
+
+    // HTML 이스케이프 유틸리티 (XSS 보안 주입 방지)
+    function escapeHtml(text) {
+        if (!text) return '';
+        return text
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+    let activeDeletes = { id: null, realHash: null };
+
+    window.triggerDelete = (id, realHash) => {
+        activeDeletes = { id, realHash };
+        document.getElementById('deletePasswordInput').value = '';
+        document.getElementById('deleteModal').style.display = 'block';
+    };
+
+    // DOM 마운트 후 로직 구동
+    window.addEventListener('DOMContentLoaded', async () => {
+        // 인증 개시
+        await startAuth();
+
+        // 1. 방명록 실시간 조회 (Firestore Rule 1에 맞춰 strict path 준수)
+        if (isFirebaseReady) {
+            // RULE 1 - Strict Path 사용
+            const guestbookCollection = collection(db, 'artifacts', appId, 'public', 'data', 'guestbook');
+            
+            // RULE 2 - 복잡한 orderby 대신 단순 쿼리 후 클라이언트 메모리 정렬
+            onSnapshot(guestbookCollection, (snapshot) => {
+                const list = [];
+                snapshot.forEach(doc => {
+                    list.push({ id: doc.id, ...doc.data() });
+                });
+                
+                // 시간 역순 (최신글이 위로) 클라이언트 정렬
+                list.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+                
+                // 로컬 동기화 및 렌더링
+                localGuestbook = list;
+                renderGuestbook(list);
+            }, (error) => {
+                console.error("Firestore 수신 에러. 로컬 모드로 동작합니다: ", error);
+                useLocalFallbackMode();
+            });
+        } else {
+            useLocalFallbackMode();
+        }
+
+        // 로컬 스토리지 보완용 폴백 처리 함수
+        function useLocalFallbackMode() {
+            const saved = localStorage.getItem('local_guestbook');
+            if (saved) {
+                localGuestbook = JSON.parse(saved);
+            }
+            renderGuestbook(localGuestbook);
+        }
+
+        document.getElementById('guestbook-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('gb-name').value.trim();
+            const password = document.getElementById('gb-password').value.trim();
+            const icon = document.getElementById('gb-icon').value;
+            const message = document.getElementById('gb-message').value.trim();
+
+            if (!name || !password || !message) {
+                showToast("모든 필수 입력 요소를 채워주세요!");
+                return;
+            }
+
+            if (password.length !== 4 || isNaN(password)) {
+                showToast("비밀번호는 숫자 4자리여야 합니다.");
+                return;
+            }
+
+            const newEntry = {
+                name,
+                password, // 단순 비교용 일반 비밀번호
+                icon,
+                message,
+                createdAt: Date.now()
+            };
+
+            // Firestore가 준비되어 있고 유효하게 인증되었을 때 등록 진행
+            if (isFirebaseReady && auth.currentUser) {
+                try {
+                    // RULE 1: Strict Path 등록
+                    const guestbookCollection = collection(db, 'artifacts', appId, 'public', 'data', 'guestbook');
+                    await addDoc(guestbookCollection, newEntry);
+                    showToast("승차명부(방명록) 작성이 성공적으로 완료되었습니다!");
+                } catch (err) {
+                    console.error("Firestore 글쓰기 실패. 로컬 저장으로 폴백:", err);
+                    saveToLocalFallback(newEntry);
+                }
+            } else {
+                saveToLocalFallback(newEntry);
+            }
+
+            // 인풋 폼 리셋
+            document.getElementById('gb-name').value = '';
+            document.getElementById('gb-password').value = '';
+            document.getElementById('gb-message').value = '';
+        });
+
+        function saveToLocalFallback(entry) {
+            entry.id = 'local_' + Date.now();
+            localGuestbook.unshift(entry);
+            localStorage.setItem('local_guestbook', JSON.stringify(localGuestbook));
+            renderGuestbook(localGuestbook);
+            showToast("로컬 메모리에 안전하게 등록되었습니다.");
+        }
+
+        document.getElementById('closeDeleteModal').onclick = () => {
+            document.getElementById('deleteModal').style.display = 'none';
+        };
+
+        document.getElementById('cancelDeleteBtn').onclick = () => {
+            document.getElementById('deleteModal').style.display = 'none';
+        };
+
+        document.getElementById('confirmDeleteBtn').onclick = async () => {
+            const inputPw = document.getElementById('deletePasswordInput').value;
+            const target = activeDeletes;
+
+            if (!inputPw) {
+                showToast("비밀번호를 입력해주세요.");
+                return;
+            }
+
+            if (inputPw !== target.realHash) {
+                showToast("비밀번호가 일치하지 않습니다.");
+                return;
+            }
+
+            // 삭제 수행
+            if (isFirebaseReady && auth.currentUser && !target.id.startsWith('local_')) {
+                try {
+                    // RULE 1: Strict Path 문서 지정 후 삭제
+                    const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'guestbook', target.id);
+                    await deleteDoc(docRef);
+                    showToast("성공적으로 글이 삭제되었습니다.");
+                } catch (err) {
+                    showToast("클라우드 삭제 실패: " + err.message);
+                }
+            } else {
+                // 로컬 삭제 폴백
+                localGuestbook = localGuestbook.filter(msg => msg.id !== target.id);
+                localStorage.setItem('local_guestbook', JSON.stringify(localGuestbook));
+                renderGuestbook(localGuestbook);
+                showToast("로컬 메모리에서 글이 삭제되었습니다.");
+            }
+
+            document.getElementById('deleteModal').style.display = 'none';
+        };
+    });
+</script>
 
 <script>
 const data={
